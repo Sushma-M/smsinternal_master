@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SMS" type="DataService" springFile="SMS.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.smsinternal.sms.Jjrusers">
+            <element name="isActive" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="siteId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" allowNull="true"/>
+            <element name="userName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastLoggedInTime" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.PublicLiability">
+            <element name="limit" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="insuranceCompany" typeRef="java.lang.String" allowNull="true"/>
+            <element name="insurancePolicyNumber" typeRef="java.lang.String" allowNull="true"/>
+            <element name="expiryDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="states" typeRef="com.smsinternal.sms.States" allowNull="true"/>
+            <element name="suppliers" typeRef="com.smsinternal.sms.Suppliers" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.WorkersCompensation">
+            <element name="limit" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="insuranceCompany" typeRef="java.lang.String" allowNull="true"/>
+            <element name="expiryDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="company" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="states" typeRef="com.smsinternal.sms.States" allowNull="true"/>
+            <element name="policyNo" typeRef="java.lang.String" allowNull="true"/>
+            <element name="suppliers" typeRef="com.smsinternal.sms.Suppliers" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.MontorVehicleInsurance">
+            <element name="limit" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="insuranceCompany" typeRef="java.lang.String" allowNull="true"/>
+            <element name="expiryDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="states" typeRef="com.smsinternal.sms.States" allowNull="true"/>
+            <element name="suppliers" typeRef="com.smsinternal.sms.Suppliers" allowNull="true"/>
+            <element name="vehicleInsurancePolicyNumber" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.SupplierStates">
+            <element name="statesId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="supplierId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="states" typeRef="com.smsinternal.sms.States" allowNull="true"/>
+            <element name="suppliers" typeRef="com.smsinternal.sms.Suppliers" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.States">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="publicLiabilities" typeRef="com.smsinternal.sms.PublicLiability" isList="true" allowNull="true"/>
+            <element name="supplierStateses" typeRef="com.smsinternal.sms.SupplierStates" isList="true" allowNull="true"/>
+            <element name="workersCompensations" typeRef="com.smsinternal.sms.WorkersCompensation" isList="true" allowNull="true"/>
+            <element name="montorVehicleInsurances" typeRef="com.smsinternal.sms.MontorVehicleInsurance" isList="true" allowNull="true"/>
+            <element name="tradeCertificates" typeRef="com.smsinternal.sms.TradeCertificate" isList="true" allowNull="true"/>
+            <element name="state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="countries" typeRef="com.smsinternal.sms.Countries" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.Countries">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="stateses" typeRef="com.smsinternal.sms.States" isList="true" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.ServiceTypes">
+            <element name="workersComp" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="accreditaionCertification" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="publicLiability" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="additionalInfo" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="tradeLicence" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="licenceDeclaration" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="supplierServiceType" typeRef="java.lang.String" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="professionalIndemnity" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" allowNull="true"/>
+            <element name="ra_jsea" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="licencesAndApprovalsToOperate" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="supplierServiceses" typeRef="com.smsinternal.sms.SupplierServices" isList="true" allowNull="true"/>
+            <element name="vehicleInsurance" typeRef="java.lang.Boolean" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.Status">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+            <element name="supplierses" typeRef="com.smsinternal.sms.Suppliers" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.DocumentHeaders">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="headerInfo" typeRef="java.lang.String" allowNull="true"/>
+            <element name="tableName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="columnName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.SupplierServices">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="serviceTypes" typeRef="com.smsinternal.sms.ServiceTypes" allowNull="true"/>
+            <element name="suppliers" typeRef="com.smsinternal.sms.Suppliers" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.TradeCertificate">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="tradeCertificate" typeRef="java.lang.String" allowNull="true"/>
+            <element name="states" typeRef="com.smsinternal.sms.States" allowNull="true"/>
+            <element name="suppliers" typeRef="com.smsinternal.sms.Suppliers" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smsinternal.sms.Suppliers">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="publicLiabilities" typeRef="com.smsinternal.sms.PublicLiability" isList="true" allowNull="true"/>
+            <element name="supplierStateses" typeRef="com.smsinternal.sms.SupplierStates" isList="true" allowNull="true"/>
+            <element name="workersCompensations" typeRef="com.smsinternal.sms.WorkersCompensation" isList="true" allowNull="true"/>
+            <element name="supplierName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="montorVehicleInsurances" typeRef="com.smsinternal.sms.MontorVehicleInsurance" isList="true" allowNull="true"/>
+            <element name="status" typeRef="com.smsinternal.sms.Status" allowNull="true"/>
+            <element name="tradeCertificates" typeRef="com.smsinternal.sms.TradeCertificate" isList="true" allowNull="true"/>
+            <element name="supplierServiceses" typeRef="com.smsinternal.sms.SupplierServices" isList="true" allowNull="true"/>
+            <element name="abn" typeRef="java.lang.String" allowNull="true"/>
+            <element name="vendorNo" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

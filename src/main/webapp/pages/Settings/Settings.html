@@ -1,0 +1,211 @@
+<wm-page data-ng-controller="SettingsPageController" pagetitle="Settings" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpaneServices" heading="Services Definition" height="80%" class="panel-default">
+                    <wm-livegrid formlayout="dialog" name="livegridServices" service="SMS@ServiceTypes">
+                        <wm-grid gridfirstrowselect="true" readonlygrid="false" dataset="bind:Variables.SMSServiceTypesData.dataSet" navigation="Advanced" name="gridServices" height="80%" class="panel-default">
+                            <wm-grid-column binding="supplierServiceType" caption="Supplier Service Type" type="string" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false"></wm-grid-column>
+                            <wm-grid-column binding="description" caption="Description" type="string" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false"></wm-grid-column>
+                            <wm-grid-column binding="personalIndemnity" caption="Personal Indemnity" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.personalIndemnity" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="publicLiability" caption="Public Liability" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.publicLiability" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="workersComp" caption="Workers Comp" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.workersComp" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="vehicleInsurance" caption="Vehicle Insurance" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.vehicleInsurance" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="declarationOfLicenses" caption="Declaration Of Licenses" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.declarationOfLicenses" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="tradeLicense" caption="Trade License" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.tradeLicense" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="era" caption="Era" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.era" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="jsea" caption="Jsea" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.jsea" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="bfm" caption="Bfm" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.bfm" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="additionalInfo" caption="Additional Info" type="boolean" widget-type="checkbox" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false">
+                                <input type="checkbox" ng-model="row.additionalInfo" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="rowOperations" caption="Actions" type="custom" readonly="true" pcdisplay="true" mobiledisplay="true" sortable="false" searchable="false" show="true"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="Add a new Service Definition" show="true" class="btn-success" iconclass="wi wi-plus" title="Add a new Service Definition" action="addNewRow()"></wm-grid-action>
+                            <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()"></wm-grid-row-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="ServiceTypes Info" formlayout="dialog" dataset="bind:Variables.SMSServiceTypesData.dataSet" captionalign="left" captionposition="left" name="liveform3" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow4">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                                        <wm-form-field name="supplierServiceType" displayname="Supplier Service Type" show="true" primary-key="false" generator="assigned" key="supplierServiceType" type="string" is-related="false" pc-display="true" mobile-display="true"
+                                        widget="text" maxchars="255" inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                                        <wm-form-field name="description" displayname="Description" show="true" primary-key="false" generator="assigned" key="description" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text"
+                                        maxchars="255" inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow6">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                                        <wm-form-field name="personalIndemnity" displayname="Personal Indemnity" show="true" primary-key="false" generator="assigned" key="personalIndemnity" type="boolean" is-related="false" pc-display="true" mobile-display="true"
+                                        widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow7">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                                        <wm-form-field name="publicLiability" displayname="Public Liability" show="true" primary-key="false" generator="assigned" key="publicLiability" type="boolean" is-related="false" pc-display="true" mobile-display="true"
+                                        widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow8">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                                        <wm-form-field name="workersComp" displayname="Workers Comp" show="true" primary-key="false" generator="assigned" key="workersComp" type="boolean" is-related="false" pc-display="true" mobile-display="true" widget="checkbox"
+                                        regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow9">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                                        <wm-form-field name="vehicleInsurance" displayname="Vehicle Insurance" show="true" primary-key="false" generator="assigned" key="vehicleInsurance" type="boolean" is-related="false" pc-display="true" mobile-display="true"
+                                        widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow10">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                                        <wm-form-field name="declarationOfLicenses" displayname="Declaration Of Licenses" show="true" primary-key="false" generator="assigned" key="declarationOfLicenses" type="boolean" is-related="false" pc-display="true"
+                                        mobile-display="true" widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow11">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn11">
+                                        <wm-form-field name="tradeLicense" displayname="Trade License" show="true" primary-key="false" generator="assigned" key="tradeLicense" type="boolean" is-related="false" pc-display="true" mobile-display="true" widget="checkbox"
+                                        regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                        <wm-form-field name="era" displayname="Era" show="true" primary-key="false" generator="assigned" key="era" type="boolean" is-related="false" pc-display="true" mobile-display="true" widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                        <wm-form-field name="jsea" displayname="Jsea" show="true" primary-key="false" generator="assigned" key="jsea" type="boolean" is-related="false" pc-display="true" mobile-display="true" widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow14">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                        <wm-form-field name="bfm" displayname="Bfm" show="true" primary-key="false" generator="assigned" key="bfm" type="boolean" is-related="false" pc-display="true" mobile-display="true" widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow15">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                                        <wm-form-field name="additionalInfo" displayname="Additional Info" show="true" primary-key="false" generator="assigned" key="additionalInfo" type="boolean" is-related="false" pc-display="true" mobile-display="true"
+                                        widget="checkbox" regexp=".*"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" type="submit" update-mode="true"></wm-form-action>
+                            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" type="button" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpaneUsers" heading="Users" class="panel-default" badgetype="default" isdefaultpane="true">
+                    <wm-livegrid formlayout="dialog" name="livegrid5" service="SMS@Jjrusers">
+                        <wm-grid gridfirstrowselect="true" readonlygrid="false" dataset="bind:Variables.SMSJjrusersData.dataSet" navigation="Classic" name="gridUsers">
+                            <wm-grid-column binding="userName" caption="User Name" type="string" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false"></wm-grid-column>
+                            <wm-grid-column binding="siteId" caption="Site Id" type="integer" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false"></wm-grid-column>
+                            <wm-grid-column binding="role" caption="Role" type="string" generator="assigned" pcdisplay="true" mobiledisplay="true" show="true" readonly="false"></wm-grid-column>
+                            <wm-grid-column binding="rowOperations" caption="Actions" type="custom" readonly="true" pcdisplay="true" mobiledisplay="true" sortable="false" searchable="false" show="true"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()"></wm-grid-action>
+                            <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()"></wm-grid-row-action>
+                            <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()"></wm-grid-row-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="Jjrusers Info" formlayout="dialog" dataset="bind:Variables.SMSJjrusersData.dataSet" captionalign="left" captionposition="top" name="liveform5">
+                            <wm-layoutgrid name="layoutgrid5">
+                                <wm-gridrow name="gridrow19">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn19">
+                                        <wm-form-field name="userName" displayname="User Name" show="true" primary-key="false" generator="assigned" key="userName" type="string" is-related="false" required="required" pc-display="true" mobile-display="true"
+                                        widget="autocomplete" maxchars="255" inputtype="text" regexp=".*" placeholder="Enter value" dataset="bind:Variables.SMSJjrusersData.dataSet" datafield="userName" searchkey="userName" displaylabel="userName"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow20">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn20">
+                                        <wm-form-field name="siteId" displayname="Site Id" show="true" primary-key="false" generator="assigned" key="siteId" type="integer" is-related="false" pc-display="true" mobile-display="true" step="0" widget="number"
+                                        inputtype="number" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow21">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn21">
+                                        <wm-form-field name="role" displayname="Role" show="true" primary-key="false" generator="assigned" key="role" type="string" is-related="false" pc-display="true" mobile-display="true" widget="select" maxchars="255" datafield="role"
+                                        displayfield="role" regexp=".*" dataset="User, Site Approver, IMS Officer" placeholder="Select value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" type="button" update-mode="true"></wm-form-action>
+                            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" type="submit" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpaneCountry" heading="Country" class="panel-default">
+                    <wm-livegrid formlayout="dialog" name="livegridCountry" service="SMS@Countries">
+                        <wm-grid gridfirstrowselect="true" deleterow="false" updaterow="true" insertrow="true" readonlygrid="false" dataset="bind:Variables.SMSCountriesData.dataSet" navigation="Advanced" name="gridCountries" class="panel-default">
+                            <wm-grid-column binding="country" caption="Country" type="string" width="px" generator="assigned" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="Add New Country" show="true" class="btn-success" iconclass="wi wi-plus" title="Add New Country" action="addNewRow()" accessroles=""></wm-grid-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="Countries Info" formlayout="dialog" dataset="bind:Variables.SMSCountriesData.dataSet" captionalign="left" captionposition="left" name="liveform1" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid1">
+                                <wm-gridrow name="gridrow1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                                        <wm-form-field name="country" displayname="Country" show="true" primary-key="false" generator="assigned" key="country" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" type="submit" update-mode="true"></wm-form-action>
+                            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" type="button" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpaneStates" heading="States" class="panel-default">
+                    <wm-livegrid formlayout="dialog" name="livegridStates" service="SMS@States">
+                        <wm-grid gridfirstrowselect="true" deleterow="false" updaterow="true" insertrow="true" readonlygrid="false" dataset="bind:Variables.SMSStatesData.dataSet" navigation="Advanced" name="gridStates" class="panel-default">
+                            <wm-grid-column binding="state" caption="State" type="string" width="px" generator="assigned" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                            <wm-grid-column binding="countries.country" caption="Country" type="string" width="px" generator="assigned" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                            <wm-grid-action key="addNewRow" display-name="ADD NEW STATE" show="true" class="btn-success" iconclass="wi wi-plus" title="ADD NEW STATE" action="addNewRow()" accessroles=""></wm-grid-action>
+                        </wm-grid>
+                        <wm-liveform novalidate="false" title="States Info" formlayout="dialog" dataset="bind:Variables.SMSStatesData.dataSet" captionalign="left" captionposition="left" name="liveform2" class="panel-default">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow2">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                                        <wm-form-field name="state" displayname="State" show="true" primary-key="false" generator="assigned" key="state" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="255"
+                                        inputtype="text" regexp=".*" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                                        <wm-form-field name="countries" displayname="Countries" show="true" primary-key="false" generator="assigned" key="countries" type="list" is-related="true" pc-display="true" mobile-display="true" widget="select" regexp=".*"
+                                        placeholder="Select value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" type="submit" update-mode="true"></wm-form-action>
+                            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" type="button" update-mode="true"></wm-form-action>
+                        </wm-liveform>
+                    </wm-livegrid>
+                </wm-accordionpane>
+            </wm-accordion>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

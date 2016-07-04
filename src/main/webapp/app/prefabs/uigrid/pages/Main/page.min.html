@@ -1,0 +1,71 @@
+<style id="Main.css">
+</style>
+<script id="Main.js">
+Application.$controller("UigridController", ["$scope", function($scope) {
+    "use strict";
+
+    /* 
+     * This function will be invoked when any of this prefab's property is changed
+     * @key: property name
+     * @newVal: new value of the property
+     * @oldVal: old value of the property
+     */
+    function propertyChangeHandler(key, newVal, oldVal) {
+            /*
+		switch (key) {
+			case "prop1":
+				// do something with newVal for property 'prop1'
+				break;
+			case "prop2":
+				// do something with newVal for property 'prop2'
+				break;
+		}
+		*/
+            if (key == "defaultGridData")
+                $scope.myData = newVal;
+
+        }
+        /* register the property change handler */
+    $scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+    $scope.onInitPrefab = function() {
+        // this method will be triggered post initialization of the prefab.
+    }
+}]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+  "defaultGridData" : {
+    "isList" : true,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "_id" : "wm-defaultGridData-wm.Variable-1465364400866",
+    "name" : "defaultGridData",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : [ {
+      "dataValue" : ""
+    } ]
+  },
+  "supportedLocale" : {
+    "isList" : false,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : {
+      "en" : "English"
+    }
+  }
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page data-ng-controller="UigridController"> 
+    <wm-view class="container" backgroundcolor="#fff"> 
+        <div id="grid1" ui-grid="{ data: myData }" ui-grid-edit class="grid"></div> 
+    </wm-view> 
+</wm-page>
+</script>

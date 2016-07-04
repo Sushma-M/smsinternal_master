@@ -1,0 +1,291 @@
+{
+  "basePath" : "${rest.CheckABN.basepath}",
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "host" : "${rest.CheckABN.host}",
+  "paths" : {
+    "" : {
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-BASE_PATH" : "/api/abn/{ABN}",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-OPERATION_UID" : "29bb4413-6ce6-45c2-a8da-a9041c45f3e1",
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "parameters" : [ {
+          "name" : "ABN",
+          "required" : true,
+          "type" : "string",
+          "in" : "path"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "CheckABN_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "schemes" : [ "${rest.CheckABN.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "ABRPayloadSearchResults" : {
+          "$ref" : "#/definitions/ABRPayloadSearchResults"
+        }
+      }
+    },
+    "identifierSearchRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.identifierSearchRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "history" : {
+          "type" : "string"
+        },
+        "identifierValue" : {
+          "type" : "string"
+        },
+        "authenticationGUID" : {
+          "type" : "string"
+        },
+        "identifierType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "businessEntity201408" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.businessEntity201408",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "businessName" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/businessNameEntryItem"
+          },
+          "type" : "array",
+          "uniqueItems" : false
+        },
+        "otherTradingName" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/otherTradingNameEntryItem"
+          },
+          "type" : "array",
+          "uniqueItems" : false
+        },
+        "mainName" : {
+          "$ref" : "#/definitions/mainName"
+        },
+        "ASICNumber" : {
+          "type" : "string"
+        },
+        "entityStatus" : {
+          "$ref" : "#/definitions/entityStatus"
+        },
+        "recordLastUpdatedDate" : {
+          "type" : "string"
+        },
+        "entityType" : {
+          "$ref" : "#/definitions/entityType"
+        },
+        "mainBusinessPhysicalAddress" : {
+          "$ref" : "#/definitions/mainBusinessPhysicalAddress"
+        },
+        "goodsAndServicesTax" : {
+          "$ref" : "#/definitions/goodsAndServicesTax"
+        },
+        "ABN" : {
+          "$ref" : "#/definitions/ABN"
+        },
+        "mainTradingName" : {
+          "$ref" : "#/definitions/mainTradingName"
+        }
+      }
+    },
+    "mainName" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.mainName",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "organisationName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "businessNameEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.businessNameEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "organisationName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "entityType" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.entityType",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "entityTypeCode" : {
+          "type" : "string"
+        },
+        "entityDescription" : {
+          "type" : "string"
+        }
+      }
+    },
+    "response" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.response",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "dateTimeRetrieved" : {
+          "type" : "string"
+        },
+        "usageStatement" : {
+          "type" : "string"
+        },
+        "businessEntity201408" : {
+          "$ref" : "#/definitions/businessEntity201408"
+        },
+        "dateRegisterLastUpdated" : {
+          "type" : "string"
+        }
+      }
+    },
+    "request" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.request",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "identifierSearchRequest" : {
+          "$ref" : "#/definitions/identifierSearchRequest"
+        }
+      }
+    },
+    "entityStatus" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.entityStatus",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "entityStatusCode" : {
+          "type" : "string"
+        },
+        "effectiveTo" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ABRPayloadSearchResults" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.ABRPayloadSearchResults",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "response" : {
+          "$ref" : "#/definitions/response"
+        },
+        "@xmlns:xsd" : {
+          "type" : "string"
+        },
+        "request" : {
+          "$ref" : "#/definitions/request"
+        },
+        "@xmlns:xsi" : {
+          "type" : "string"
+        },
+        "@xmlns" : {
+          "type" : "string"
+        }
+      }
+    },
+    "mainBusinessPhysicalAddress" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.mainBusinessPhysicalAddress",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "effectiveTo" : {
+          "type" : "string"
+        },
+        "stateCode" : {
+          "type" : "string"
+        },
+        "postcode" : {
+          "type" : "string"
+        }
+      }
+    },
+    "otherTradingNameEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.otherTradingNameEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "organisationName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "goodsAndServicesTax" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.goodsAndServicesTax",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "effectiveTo" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ABN" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.ABN",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "identifierValue" : {
+          "type" : "string"
+        },
+        "isCurrentIndicator" : {
+          "type" : "string"
+        },
+        "replacedFrom" : {
+          "type" : "string"
+        }
+      }
+    },
+    "mainTradingName" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "CheckABN.mainTradingName",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "effectiveFrom" : {
+          "type" : "string"
+        },
+        "organisationName" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "6eac38c4-2864-47fa-8f25-c04a069d8adb",
+    "x-WM-SERVICE_ID" : "jjr",
+    "version" : "2.0"
+  }
+}

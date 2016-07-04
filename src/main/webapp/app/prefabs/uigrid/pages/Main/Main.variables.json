@@ -1,0 +1,27 @@
+{
+  "defaultGridData" : {
+    "isList" : true,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "_id" : "wm-defaultGridData-wm.Variable-1465364400866",
+    "name" : "defaultGridData",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : [ {
+      "dataValue" : ""
+    } ]
+  },
+  "supportedLocale" : {
+    "isList" : false,
+    "category" : "wm.Variable",
+    "saveInPhonegap" : false,
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : {
+      "en" : "English"
+    }
+  }
+}

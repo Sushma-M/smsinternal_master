@@ -1,0 +1,69 @@
+{
+  "CheckABNInvoke" : {
+    "_id" : "wm-CheckABNInvoke-wm.ServiceVariable-1465282359608",
+    "name" : "CheckABNInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "ABN",
+      "value" : "bind:Widgets.txtABN.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "CheckABN.RootResponse",
+    "service" : "CheckABN",
+    "operation" : "invoke",
+    "operationId" : "CheckABN_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual",
+    "spinnerContext" : "page"
+  },
+  "navigateBack" : {
+    "_id" : "wm-navigateBack-wm.NavigationVariable-1465432464413",
+    "name" : "navigateBack",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "RegisterNewSupplier",
+      "type" : "list"
+    }, {
+      "target" : "viewName",
+      "value" : "mainView",
+      "type" : "list"
+    } ],
+    "operation" : "gotoView",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "showSupplierRegistrationView" : {
+    "_id" : "wm-showSupplierRegistrationView-wm.NavigationVariable-1465283819321",
+    "name" : "showSupplierRegistrationView",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "RegisterNewSupplier",
+      "type" : "list"
+    }, {
+      "target" : "viewName",
+      "value" : "SupplierRegistrationView",
+      "type" : "list"
+    } ],
+    "operation" : "gotoView",
+    "pageTransitions" : "none"
+  }
+}

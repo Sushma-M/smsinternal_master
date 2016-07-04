@@ -1,0 +1,35 @@
+<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main"> 
+    <wm-header content="header" name="header" height="auto"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content" horizontalalign="center" backgroundimage="resources/images/imagelists/bg.png" backgroundrepeat="no-repeat"> 
+        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent" horizontalalign="center"> 
+            <wm-layoutgrid name="layoutgrid1" columns="2" borderunit="px" borderstyle="none"> 
+                <wm-gridrow name="gridrow4"> 
+                    <wm-gridcolumn colwidth="6" name="gridcolumn10" borderstyle="none"> 
+                        <wm-panel class="panel-success" name="panel1" title="Suppliers by Service Types"> 
+                            <wm-chart type="Pie" name="chart4" theme="Azure"></wm-chart> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn colwidth="6" name="gridcolumn11" borderstyle="none"> 
+                        <wm-panel class="panel-success" name="panel2" title="Suppliers by Status"> 
+                            <wm-chart type="Pie" name="chart5" theme="Azure"></wm-chart> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow9"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn20" horizontalalign="center"> 
+                        <wm-panel class="panel-success" name="panel3" title="Supplier Registration About to Expire"> 
+                            <wm-label name="label5" fontsize="50" caption="50"></wm-label> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn21" horizontalalign="center"> 
+                        <wm-panel class="panel-success" name="panel4" title="Suppliers Pending Approval"> 
+                            <wm-label name="label6" caption="5" fontsize="50"></wm-label> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer name="footer" content="footer"></wm-footer> 
+</wm-page>

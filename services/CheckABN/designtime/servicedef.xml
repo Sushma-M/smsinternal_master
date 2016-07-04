@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CheckABN" type="RestService" springFile="CheckABN.spring.xml">
+    <operation name="invoke">
+        <parameter name="ABN" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="CheckABN.RootResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="CheckABN.ABN" name="ABN" supportsQuickData="false">
+            <element name="isCurrentIndicator" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="identifierValue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="replacedFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.mainName" name="mainName" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="organisationName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.goodsAndServicesTax" name="goodsAndServicesTax" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="effectiveTo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.businessNameEntryItem" name="businessNameEntryItem" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="organisationName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.RootResponse" name="RootResponse" supportsQuickData="false">
+            <element name="ABRPayloadSearchResults" typeRef="CheckABN.ABRPayloadSearchResults" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.identifierSearchRequest" name="identifierSearchRequest" supportsQuickData="false">
+            <element name="history" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="identifierValue" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="authenticationGUID" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="identifierType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.businessEntity201408" name="businessEntity201408" supportsQuickData="false">
+            <element name="businessName" typeRef="CheckABN.businessNameEntryItem" isList="true" allowNull="false"/>
+            <element name="otherTradingName" typeRef="CheckABN.otherTradingNameEntryItem" isList="true" allowNull="false"/>
+            <element name="mainName" typeRef="CheckABN.mainName" isList="false" allowNull="false"/>
+            <element name="ASICNumber" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="entityStatus" typeRef="CheckABN.entityStatus" isList="false" allowNull="false"/>
+            <element name="recordLastUpdatedDate" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mainBusinessPhysicalAddress" typeRef="CheckABN.mainBusinessPhysicalAddress" isList="false" allowNull="false"/>
+            <element name="entityType" typeRef="CheckABN.entityType" isList="false" allowNull="false"/>
+            <element name="goodsAndServicesTax" typeRef="CheckABN.goodsAndServicesTax" isList="false" allowNull="false"/>
+            <element name="ABN" typeRef="CheckABN.ABN" isList="false" allowNull="false"/>
+            <element name="mainTradingName" typeRef="CheckABN.mainTradingName" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.request" name="request" supportsQuickData="false">
+            <element name="identifierSearchRequest" typeRef="CheckABN.identifierSearchRequest" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.otherTradingNameEntryItem" name="otherTradingNameEntryItem" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="organisationName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.ABRPayloadSearchResults" name="ABRPayloadSearchResults" supportsQuickData="false">
+            <element name="response" typeRef="CheckABN.response" isList="false" allowNull="false"/>
+            <element name="@xmlns:xsd" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="request" typeRef="CheckABN.request" isList="false" allowNull="false"/>
+            <element name="@xmlns:xsi" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="@xmlns" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.entityType" name="entityType" supportsQuickData="false">
+            <element name="entityTypeCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="entityDescription" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.response" name="response" supportsQuickData="false">
+            <element name="dateTimeRetrieved" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="businessEntity201408" typeRef="CheckABN.businessEntity201408" isList="false" allowNull="false"/>
+            <element name="usageStatement" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="dateRegisterLastUpdated" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.entityStatus" name="entityStatus" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="entityStatusCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="effectiveTo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.mainTradingName" name="mainTradingName" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="organisationName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="CheckABN.mainBusinessPhysicalAddress" name="mainBusinessPhysicalAddress" supportsQuickData="false">
+            <element name="effectiveFrom" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="effectiveTo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="stateCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="postcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

@@ -1,0 +1,11 @@
+{
+  "users" : [ {
+    "userid" : "user",
+    "password" : "user",
+    "roles" : [ "user", "User" ]
+  }, {
+    "userid" : "admin",
+    "password" : "admin",
+    "roles" : [ "IMS Officer" ]
+  } ]
+}
